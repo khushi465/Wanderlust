@@ -1,0 +1,57 @@
+<%-layout("layouts/boilerplate")%>
+
+    <body>
+        <div class="row mt-3">
+            <div class="col-8 offset-2">
+            
+                <h2>New Listing</h2>
+                <br>
+                <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="listing[title]" id="title" class="form-control" placeholder="Add a Catchy Title" required>
+                        <div class="valid-feedback">Title Looks good!</div>
+                        <div class="invalid-feedback">Please enter a valid Title</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" id="description" class="form-control" required></textarea>
+                        <div class="valid-feedback">Description Looks good!</div>
+                        <div class="invalid-feedback">Please enter a valid Description</div>
+                    </div>
+                    <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="price" name="listing[price]" placeholder="1200" required>
+                        <div class="valid-feedback">Price Looks good!</div>
+                        <div class="invalid-feedback">Please enter a valid Price</div>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="country" name="listing[country]" placeholder="India" required>
+                        <div class="valid-feedback">Country Looks good!</div>
+                        <div class="invalid-feedback">Please enter a valid Country</div>
+                    </div>
+                </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Listing Image</label>
+                        <input name="listing[image]" id="image" class="form-control" type="file" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="location" name="listing[location]" placeholder="Kolkata, West Bengal" required>
+                        <div class="valid-feedback">Location Looks good!</div>
+                        <div class="invalid-feedback">Please enter a valid Location</div>
+                    </div>
+                    
+                    <button class="btn btn-dark add-btn mt-3">Add</button>
+                    <br><br>
+                </form>
+            </div>
+        </div>
+    </body>
+    <!-- but we want our custom error messages otherwise different browsers give different errors for required and this will stop the website from being similar in all plaatforms or standardized
+     so we dont want browser default. we want bootstrap
+     so in the form we put novalidate field and class needs-validation and add the js code of script.js 
+     we add the script.js in the boilerplate 
+     we add the divs for invalid and valid-feedback  -->
